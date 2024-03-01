@@ -1,11 +1,8 @@
 <?php
 /* 
-
 ## Snack 1
-
 Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema:
 Olimpia Milano - Cantù | 55-60
-
 */
 
 $matches = [
@@ -39,7 +36,62 @@ $matches = [
         'points_teamAway' => 63,
         'points_teamHome' => 79,
     ]
-]
+    ];
+
+/* 
+## Snack 3
+Creare un array di array. Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01-01-2007 e come valore un array di post associati a quella data. Stampare ogni data con i relativi post.
+Qui l’array di esempio: https://www.codepile.net/pile/R2K5d68z
+*/
+
+$posts = [
+
+    '10/01/2019' => [
+        [
+            'title' => 'Post 1',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 1'
+        ],
+        [
+            'title' => 'Post 2',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 2'
+        ],
+    ],
+    '10/02/2019' => [
+        [
+            'title' => 'Post 3',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 3'
+        ]
+    ],
+    '15/05/2019' => [
+        [
+            'title' => 'Post 4',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 4'
+        ],
+        [
+            'title' => 'Post 5',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 5'
+        ],
+        [
+            'title' => 'Post 6',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 6'
+        ]
+    ],
+];
+
+/* foreach ($posts as $key => $value) {
+    var_dump($key);
+    foreach ($value as $ke => $post) {
+        foreach ($post as $key => $info) {
+            var_dump($key, $info);
+        }
+    }
+} */
 
 
 ?>
@@ -63,6 +115,20 @@ $matches = [
     <?php endforeach; ?>
     <!-- end Snack 1 -->
 
-
+    <!-- Snack 3 -->
+    <?php foreach ($posts as $key => $allPostOfDay) {?>
+        <div style="color: red; margin: 5px 0;"> <?php echo $key ?></div>
+        <?php foreach ($allPostOfDay as $singlePost) {?>
+            <div style="margin: 5px 0;">
+            <?php foreach ($singlePost as $key => $post) {?>
+                <div>
+                   <span style="color: green;"><?php echo $key ?></span>:
+                   <span><?php echo $post ?></span>
+                </div>
+            <?php }; ?>
+            </div>
+        <?php }; ?>
+    
+    <?php }; ?>
 </body>
 </html>
