@@ -108,6 +108,14 @@ while(count($numbers) < 15){
     }
 }
 
+/* 
+## Snack 5
+Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo.
+*/
+
+$paragraph = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat veritatis alias non corrupti odit pariatur minima quis voluptates unde aliquam tenetur, repellat necessitatibus magni quaerat labore? Maxime, ratione placeat perferendis eius nam asperiores sint dolore, quas nihil aspernatur explicabo cupiditate! Mollitia similique molestias eius magni. Est consequatur atque ut iure doloremque itaque placeat, dolorum officia perferendis quia, velit sint ab dicta, dolore cupiditate explicabo molestiae exercitationem? Aut officia, rem numquam quis dolore voluptate architecto illum laborum amet voluptas sit consectetur laboriosam quia excepturi nulla, unde asperiores, sapiente maxime optio natus exercitationem deleniti recusandae quasi nobis. Commodi quibusdam odio, neque atque natus est rem itaque ipsum! Nam voluptatem obcaecati in natus? Iure, aliquam. Sed mollitia earum eaque dolores nostrum, pariatur quam. Est maxime odit facere dignissimos doloremque iusto error nesciunt dolor laborum? Voluptate modi tenetur ex cupiditate asperiores in quibusdam, ipsam molestias a nam ratione impedit aperiam fugiat accusantium maxime sit eveniet hic, architecto autem omnis voluptas adipisci. Fuga est sit molestias rem harum laboriosam quaerat numquam ea! Quidem sapiente natus sit. Modi quisquam voluptatum praesentium, amet culpa libero, accusamus esse incidunt iure optio ullam cum totam illo temporibus quis eveniet vitae officia maxime. Hic ullam ea sequi delectus facilis molestiae.';
+
+var_dump(explode(".", $paragraph));
 ?>
 
 <!DOCTYPE html>
@@ -146,6 +154,7 @@ while(count($numbers) < 15){
     <?php }; ?>
     <!-- end Snack 3 -->
 
+    
 
 </body>
 </html>
