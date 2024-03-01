@@ -93,6 +93,20 @@ $posts = [
     }
 } */
 
+/* 
+## Snack 4
+Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
+*/
+
+$numbers = [];
+while(count($numbers) < 15){
+    $numb = rand(1, 15);
+    /* var_dump($numb); */
+    if(!in_array($numb, $numbers)){
+        $numbers[] = $numb;
+        /* var_dump($numbers); */
+    }
+}
 
 ?>
 
@@ -128,7 +142,10 @@ $posts = [
             <?php }; ?>
             </div>
         <?php }; ?>
-    
+
     <?php }; ?>
+    <!-- end Snack 3 -->
+
+
 </body>
 </html>
