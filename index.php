@@ -116,6 +116,35 @@ Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il pa
 $paragraph = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat veritatis alias non corrupti odit pariatur minima quis voluptates unde aliquam tenetur, repellat necessitatibus magni quaerat labore? Maxime, ratione placeat perferendis eius nam asperiores sint dolore, quas nihil aspernatur explicabo cupiditate! Mollitia similique molestias eius magni. Est consequatur atque ut iure doloremque itaque placeat, dolorum officia perferendis quia, velit sint ab dicta, dolore cupiditate explicabo molestiae exercitationem? Aut officia, rem numquam quis dolore voluptate architecto illum laborum amet voluptas sit consectetur laboriosam quia excepturi nulla, unde asperiores, sapiente maxime optio natus exercitationem deleniti recusandae quasi nobis. Commodi quibusdam odio, neque atque natus est rem itaque ipsum! Nam voluptatem obcaecati in natus? Iure, aliquam. Sed mollitia earum eaque dolores nostrum, pariatur quam. Est maxime odit facere dignissimos doloremque iusto error nesciunt dolor laborum? Voluptate modi tenetur ex cupiditate asperiores in quibusdam, ipsam molestias a nam ratione impedit aperiam fugiat accusantium maxime sit eveniet hic, architecto autem omnis voluptas adipisci. Fuga est sit molestias rem harum laboriosam quaerat numquam ea! Quidem sapiente natus sit. Modi quisquam voluptatum praesentium, amet culpa libero, accusamus esse incidunt iure optio ullam cum totam illo temporibus quis eveniet vitae officia maxime. Hic ullam ea sequi delectus facilis molestiae.';
 
 var_dump(explode(".", $paragraph));
+
+/* 
+## Snack 6
+Utilizzare questo array: https://pastebin.com/CkX3680A. Stampiamo il nostro array mettendo gli insegnanti in un rettangolo grigio e i PM in un rettangolo verde.
+*/
+
+$db = [
+    'teachers' => [
+        [
+            'name' => 'Michele',
+            'lastname' => 'Papagni'
+        ],
+        [
+            'name' => 'Fabio',
+            'lastname' => 'Forghieri'
+        ]
+    ],
+    'pm' => [
+        [
+            'name' => 'Roberto',
+            'lastname' => 'Marazzini'
+        ],
+        [
+            'name' => 'Federico',
+            'lastname' => 'Pellegrini'
+        ]
+    ]
+];
+
 ?>
 
 <!DOCTYPE html>
@@ -154,7 +183,31 @@ var_dump(explode(".", $paragraph));
     <?php }; ?>
     <!-- end Snack 3 -->
 
-    
+    <!-- Snack 6 -->
+    <?php foreach ($db as $key => $person) :?>
+        <?php if ($key === 'teachers') :?>
+            <div style="background-color: gray;">
+                <?php foreach ($person as $key => $value) :?>
+                    <div>
+                       <span><?php echo $value['name'] ?></span> 
+                       <span><?php echo $value['lastname'] ?></span> 
+                    </div>
+                <?php endforeach;?>
+            </div>
+        <?php else :?>
+            <div style="background-color: red;">
+                <?php foreach ($person as $key => $value) :?>
+                    <div>
+                        <span><?php echo $value['name'] ?></span> 
+                        <span><?php echo $value['lastname'] ?></span>
+                    </div>
+                    
+                <?php endforeach;?>
+            </div>
+        <?php ?>
+        <?php endif;?>
+    <?php endforeach; ?>
+    <!-- end Snack 6 -->
 
 </body>
 </html>
