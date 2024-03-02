@@ -145,6 +145,95 @@ $db = [
     ]
 ];
 
+/* 
+## Snack 7
+Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.
+*/
+
+$students = [
+    [
+        'name' => 'Andrea',
+        'lastname' => 'Parrini',
+        'votes' => [
+            'matematica' => 9,
+            'storia' => 7,
+            'informatica' => 9,
+            'italiano' => 6,
+        ]
+    ],
+    [
+        'name' => 'Marco',
+        'lastname' => 'Parrini',
+        'votes' => [
+            'matematica' => 4,
+            'storia' => 8,
+            'informatica' => 6,
+            'italiano' => 5,
+        ]
+    ],
+    [
+        'name' => 'Sara',
+        'lastname' => 'Santucci',
+        'votes' => [
+            'matematica' => 8,
+            'storia' => 8,
+            'informatica' => 5.5,
+            'italiano' => 8,
+        ]
+    ],
+    [
+        'name' => 'Marco',
+        'lastname' => 'Miccio',
+        'votes' => [
+            'matematica' => 4,
+            'storia' => 6,
+            'informatica' => 3,
+            'italiano' => 5,
+        ]
+    ],
+    [
+        'name' => 'Andrea',
+        'lastname' => 'Zangarelli',
+        'votes' => [
+            'matematica' => 7,
+            'storia' => 8,
+            'informatica' => 5,
+            'italiano' => 8,
+        ]
+    ],
+    [
+        'name' => 'Daniele',
+        'lastname' => 'Petroselli',
+        'votes' => [
+            'matematica' => 7,
+            'storia' => 6,
+            'informatica' => 8,
+            'italiano' => 7,
+        ]
+    ],
+    [
+        'name' => 'Mauro',
+        'lastname' => 'Parrini',
+        'votes' => [
+            'matematica' => 5,
+            'storia' => 4.5,
+            'informatica' => 5.5,
+            'italiano' => 6,
+        ]
+    ],
+        ];
+
+foreach ($students as $student) {
+    var_dump($student['name']);
+    var_dump($student['lastname']);
+    $totalVotes = 0;
+    foreach ($student['votes'] as $vote) {
+        $totalVotes += $vote;
+    }
+    $results = $totalVotes / count($student['votes']);
+    var_dump($results);
+}       
+
 ?>
 
 <!DOCTYPE html>
@@ -167,8 +256,8 @@ $db = [
     <!-- end Snack 1 -->
 
     <!-- Snack 3 -->
-    <?php foreach ($posts as $key => $allPostOfDay) {?>
-        <div style="color: red; margin: 5px 0;"> <?php echo $key ?></div>
+    <?php foreach ($posts as $date => $allPostOfDay) {?>
+        <div style="color: red; margin: 5px 0;"> <?php echo $date ?></div>
         <?php foreach ($allPostOfDay as $singlePost) {?>
             <div style="margin: 5px 0;">
             <?php foreach ($singlePost as $key => $post) {?>
@@ -208,6 +297,26 @@ $db = [
         <?php endif;?>
     <?php endforeach; ?>
     <!-- end Snack 6 -->
+
+    <!-- Snack 7 -->
+    <?php foreach ($students as $student) :?>
+        <div>
+            <span><?= $student['name'] ?></span>
+            <span><?= $student['lastname'] ?></span>
+        </div>
+        <?php 
+        $totalVotes = 0;
+        foreach ($student['votes'] as $vote) {
+            $totalVotes += $vote;
+        };
+        $results = $totalVotes / count($student['votes']);
+        ?>
+        <div>
+            <span>Media Voti :</span>
+            <span><?= $results ?></span>
+        </div>
+    <?php endforeach; ?> 
+    <!-- end Snack 7 -->
 
 </body>
 </html>
