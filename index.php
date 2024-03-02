@@ -281,12 +281,8 @@ $students = [
             <span><?= $student['name'] ?></span>
             <span><?= $student['lastname'] ?></span>
         </div>
-        <?php 
-        $totalVotes = 0;
-        foreach ($student['votes'] as $vote) {
-            $totalVotes += $vote;
-        };
-        $results = $totalVotes / count($student['votes']);
+        <?php
+        $results = array_sum($student['votes']) / count($student['votes']);
         ?>
         <div>
             <span>Media Voti :</span>
