@@ -223,16 +223,6 @@ $students = [
     ],
         ];
 
-foreach ($students as $student) {
-    var_dump($student['name']);
-    var_dump($student['lastname']);
-    $totalVotes = 0;
-    foreach ($student['votes'] as $vote) {
-        $totalVotes += $vote;
-    }
-    $results = $totalVotes / count($student['votes']);
-    var_dump($results);
-}       
 
 ?>
 
@@ -273,28 +263,15 @@ foreach ($students as $student) {
     <!-- end Snack 3 -->
 
     <!-- Snack 6 -->
-    <?php foreach ($db as $key => $person) :?>
-        <?php if ($key === 'teachers') :?>
-            <div style="background-color: gray;">
-                <?php foreach ($person as $key => $value) :?>
-                    <div>
-                       <span><?php echo $value['name'] ?></span> 
-                       <span><?php echo $value['lastname'] ?></span> 
-                    </div>
-                <?php endforeach;?>
-            </div>
-        <?php else :?>
-            <div style="background-color: red;">
-                <?php foreach ($person as $key => $value) :?>
-                    <div>
-                        <span><?php echo $value['name'] ?></span> 
-                        <span><?php echo $value['lastname'] ?></span>
-                    </div>
-                    
-                <?php endforeach;?>
-            </div>
-        <?php ?>
-        <?php endif;?>
+    <?php foreach ($db as $category => $person) :?>
+        <div style="<?php echo ($category === 'teachers') ? 'background-color: gray;' : 'background-color: red;' ?>">
+            <?php foreach ($person as $key => $value) :?>
+                <div>
+                    <span><?php echo $value['name'] ?></span> 
+                    <span><?php echo $value['lastname'] ?></span> 
+                </div>
+            <?php endforeach;?>
+        </div>
     <?php endforeach; ?>
     <!-- end Snack 6 -->
 
